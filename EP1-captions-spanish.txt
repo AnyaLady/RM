@@ -1,0 +1,411 @@
+0:00:01.120,0:00:09.320
+¡Hola a todos! Bienvenidos al canal. Soy Anya y ella es Laurie. La oirás de fondo.
+
+0:00:09.320,0:00:17.120
+¡Eventualmente! Así que hoy nos sumergimos en un tutorial de
+  RPG Maker realmente divertido. ¡En este tutorial
+
+0:00:17.120,0:00:23.840
+aprenderemos cómo crear un sistema dinámico de 
+ Día y Noche usando solo eventos! Imagina tu
+
+0:00:23.840,0:00:30.360
+mundo de juego pasando del amanecer al anochecer,
+ afectando todo lo que ves: la iluminación,
+
+0:00:30.360,0:00:37.400
+el medio ambiente e incluso las rutinas diarias de los habitantes 
+ del pueblo y los animales. Emocionante, ¿no es así?
+
+0:00:37.400,0:00:43.280
+¡Entonces, empecemos! ¡Y haz que tu juego brille más que el sol al mediodía!
+
+0:00:43.280,0:00:54.480
+[risa] Correcto. ¿Estás listo? ¡Pues vamos!
+
+0:00:54.480,0:00:59.920
+¿Qué vas a ver cuando descargues mi sistema en itch.io?
+
+0:01:01.000,0:01:12.970
+Cuando abres el archivo para MZ o MV, verás que hay dos carpetas.
+
+0:01:12.970,0:01:20.120
+Una sin minijuego, otra con minijuego, que puedes abrir luego
+ (después de revisar la primera)
+
+0:01:20.120,0:01:29.760
+Además, incluye una guía. Así que, si quieres leer lo que estoy explicando aquí.
+
+0:01:29.760,0:01:37.440
+Puedes abrir la guía y echarle un vistazo allí. De lo contrario,
+ simplemente sigue viendo el tutorial.
+
+0:01:37.440,0:01:45.480
+Por eso, esta guía en video te proporciona los pasos para configurar 
+  un ciclo de día y noche en tu juego de RPG Maker.
+
+0:01:45.480,0:01:54.040
+Está diseñado para funcionar con cualquier versión de RPG Maker 
+ utilizando técnicas de eventos habituales.
+
+0:01:54.040,0:02:00.520
+Así que por favor sigue las instrucciones para implementarlo 
+ en tu proyecto. Si prefieres *leer* la guía,
+
+0:02:00.520,0:02:08.520
+puedes descargar el mismo sistema en mi sitio web de itch.io.
+ Encuentra el enlace en la descripción.
+
+0:02:08.520,0:02:22.600
+Y luego puedes leer la misma guía, así que es... ¡sí, fácil!
+ Ahora, si tienes RPG Maker... ¡Gracias, Laurie!
+
+0:02:22.600,0:02:30.720
+Si tienes RPG Maker MZ o MV, simplemente abra el archivo de demostración proporcionado. Todos los comandos de eventos esenciales
+
+0:02:30.720,0:02:40.880
+se encuentran en la esquina superior izquierda del mapa de demostración. 
+ Pero... en este vídeo sólo te voy a explicar
+
+0:02:40.880,0:02:48.680
+paso a paso cómo hacer lo mismo, para que entiendas cómo funciona.
+
+0:02:48.680,0:02:57.920
+Además, ¡este video es increíble si estás usando otro motor! No MV, no MZ.
+ Entonces podría ser Ace, podría ser XP.
+
+0:02:57.920,0:03:09.760
+Puedes usar este video para configurar fácilmente lo que ves aquí. Está bien. ¡Oh sí!
+
+0:03:09.760,0:03:16.520
+¡Una nota rápida! Se están añadiendo demos para varios motores 
+ en itch.io, así que asegúrate de comprobar si ya hay uno para
+
+0:03:16.520,0:03:26.016
+el motor que está usando! ¡Vale, sigamos! Entonces, ¡creando un
+  sistema dinámico día/noche en RPG Maker!
+
+0:03:26.016,0:03:34.840
+Ahora… ¿qué vas a aprender hoy? Así aprenderás a configurar
+ minutos, horas, meses e incluso años
+
+0:03:34.840,0:03:41.680
+en tu mundo de juego. Después aprenderás cómo crear un matiz
+ de pantalla suave según la hora del día y de la noche.
+
+0:03:41.680,0:03:52.160
+Oh Dios... mi pequeña encantadora... ¡muah! ¿Bien? Luego, cómo hacer una visualización dinámica del tiempo que se muestra en la pantalla y, como
+
+0:03:52.160,0:04:02.400
+beneficio adicional, un contador para minijuegos. Y cómo iniciar tu juego en un momento u hora específica, como las 12 pm.
+
+0:04:02.400,0:04:09.280
+Bueno, como opción: crea un minijuego o un evento en el juego que dependa del tiempo del juego. Entonces, en este ejemplo ves que
+
+0:04:09.280,0:04:20.200
+tenemos luciérnagas que solo aparecen durante la noche, pero puedes hacer lo que quieras.
+
+0:04:20.200,0:04:26.600
+Vale, ahora. Te animo a que uses este sistema como herramienta 
+ de aprendizaje y experimentes con la
+
+0:04:26.600,0:04:32.800
+mecánica de eventos detrás de él. Siempre puedes adaptar el código para 
+ tus propios proyectos, así que aplica lo que aprendas aquí
+
+0:04:32.800,0:04:45.240
+y úsalo para hacer que tus propios juegos *destaquen*! ¡Laurie 
+ caminaba sobre un teclado! Lo siento mucho. Laurie,
+
+0:04:45.240,0:04:57.640
+por favor. [Risas] Muy bien, ¡vamos a darle vida a nuestro 
+ mundo de juego! Comienza configurando los segundos,
+
+0:04:57.640,0:05:06.840
+minutos y horas del juego. Primero, vamos a configurar 
+ nuestro tiempo de juego. Para rastrear segundos, minutos y
+
+0:05:06.840,0:05:14.040
+horas usaremos variables para almacenar esta información 
+ *dinámica*, creando un mundo que está en constante cambio.
+
+0:05:14.040,0:05:24.240
+¡Primero, hagamos los segundos! Para realizar un seguimiento de los 
+ segundos del juego, crea tu primera variable haciendo doble clic
+
+0:05:24.240,0:05:35.560
+en cualquier cuadrado del mapa. Haré clic aquí. Y abre el 
+ Editor de Eventos. Pongámosle un nombre.
+
+0:05:35.560,0:05:49.520
+Así que lo llamaré ‘Tiempo de Juego’. ¡Laurie puede ver que
+  estoy escribiendo y viene hacia aquí!
+
+0:05:49.520,0:05:59.000
+Ella no presionó ningún botón, ¡así que podemos continuar! Acabo de 
+ nombrarlo ‘Tiempo de Juego (Principal)’ porque es nuestro
+
+0:05:59.000,0:06:09.800
+*evento principal* y voy a hacer... Voy a seleccionar "Paralelo" para este. Ahora, hacemos clic en
+
+0:06:09.800,0:06:19.840
+un espacio vacío y luego... ah, Laurie vino a pedir disculpas por
+  su comportamiento, qué tierno. "Controlar Variables"
+
+0:06:19.840,0:06:28.297
+Ahora, en una ‘Variable Única’ hacemos clic en los tres puntos 
+ y en el espacio vacío escribimos… ¿ya lo adivinaste?...
+
+0:06:28.297,0:06:42.000
+¡Segundos! Así que son nuestros segundos en el juego. Ahora aquí en
+  esta ventana, ¡no la cierres todavía! Porque queremos añadir ‘1’.
+
+0:06:42.000,0:06:54.560
+Y luego damos en aceptar. Entonces, ¿qué pasó aquí? Cada 
+ vez que se ejecuta este evento, la variable ‘Segundos’
+
+0:06:54.560,0:07:02.720
+aumentará en *uno* y como no tenemos nada aquí para 
+ detener la ejecución del evento,
+
+0:07:02.720,0:07:08.960
+como si no tuviéramos ninguna Rama Condicional, no 
+ tenemos comandos if, else ni nada por el estilo
+
+0:07:08.960,0:07:19.960
+ni el comando Esperar, lo que significa que seguirá contando 
+ como: uno, dos, tres, etc. De esta manera,
+
+0:07:19.960,0:07:29.720
+el tiempo en tu juego pasará igual que los segundos en el
+  mundo real. Increíble, ¿verdad? ¡Así que!
+
+0:07:29.720,0:07:37.600
+Creo que ahora estamos listos para pasar a los *minutos*. 
+ ¿Qué opinas? Bien, entonces, ¿qué pasa cuando llegamos
+
+0:07:37.600,0:07:48.040
+a los 60 segundos? Así es, ¡tenemos un minuto! Vamos a programar eso.
+
+0:07:48.040,0:07:59.440
+Entonces, lo que haremos aquí es crear una Rama 
+ Condicional. Entonces hacemos clic aquí.
+
+0:08:00.320,0:08:08.120
+Y ahora vamos a crear una variable (como la de ‘Segundos’). Y lo llamaremos
+
+0:08:08.120,0:08:20.208
+"Minutos". Pulsa Aplicar. Bien, acabamos de crear otra variable. 
+ Ahora necesitamos almacenar información en él, ¿verdad?
+
+0:08:20.208,0:08:30.716
+Entonces, lo que vamos a hacer... en una Rama Condicional > 
+ > Variable > "Segundos", voy a poner
+
+0:08:30.716,0:08:44.240
+*mayor o igual*, así que mira, lo hice aquí. Tienes *igual* y 
+ luego tienes *mayor o igual* aquí.
+
+0:08:44.240,0:08:54.560
+Así que queremos... técnicamente puedes hacer *igual* pero puedes encontrar algunos problemas con ello.
+
+0:08:54.560,0:09:07.415
+Anteriormente siempre hacía igual y luego tuve problemas con 
+ eso, así que es recomendable hacerlo *mayor o igual*.
+
+0:09:07.415,0:09:15.397
+Como esto. Y luego, lo que quiere hacer: ingresar "60" aquí. 
+ Entonces, solo estaba diciendo que
+
+0:09:15.397,0:09:22.560
+cuando llegamos a 60 segundos tenemos un minuto, así que 
+ eso es exactamente lo que estamos diciendo aquí
+
+0:09:22.560,0:09:30.360
+la variable ‘Segundos’ más igual a "60". 
+ Y luego... No voy a crear ninguna rama *más*
+
+0:09:30.360,0:09:41.051
+para no confundir a la gente nueva aquí. Entonces simplemente haremos clic en "Aceptar". ¿Ves lo que está pasando? Cuando entiendes cómo funciona
+
+0:09:41.051,0:09:48.168
+, es realmente sencillo. Entonces ahora, en nuestro código, tenemos un segundo que sigue sumando y
+
+0:09:48.168,0:09:56.649
+sumando y sumando... y luego decimos si ‘Segundos’ son 
+ mayores o iguales a "60", entonces...
+
+0:09:56.649,0:10:15.081
+vamos a hacer clic Controle las variables y luego agregue "1". 
+ Entonces decimos que si "Segundos" son *más de* "60", entonces
+
+0:10:15.081,0:10:29.305
+Ah, lo siento, cometí un error... luego ‘Minutos’ más "1". Entonces
+ agregamos "1" a nuestro "Minuto", ¿verdad? ¡Así que es sencillo!
+
+0:10:29.305,0:10:40.920
+Una cosa más que haremos aquí es restablecer la variable 
+ "Segunda". Porque básicamente,
+
+0:10:40.920,0:10:49.680
+como imaginas, en tu "Segunda" variable almacenas
+ números como 1, 2, 3, 4, 5... bla, bla, bla
+
+0:10:49.680,0:10:59.680
+hasta que sea "60", por lo que debemos *restablecerla*.
+ Necesitamos volver a cero, ¿verdad?
+
+0:10:59.680,0:11:15.680
+Entonces configuramos nuestros segundos en "0". Lo siento, lo cerré. Mire lo que hicimos: los segundos siguen sumando 1, 2, 3, 4.
+
+0:11:15.680,0:11:24.400
+y luego tenemos una rama condicional que dice: si “segundos”
+ son mayores o iguales a “60”, entonces
+
+0:11:24.400,0:11:33.014
+tenemos un minuto y el segundo se reinicia a cero. ¡Y eso es! 
+ Eso es lo único que necesitas aprender aquí.
+
+0:11:33.014,0:11:43.308
+Porque vamos a seguir así. Vamos a ver. Por ejemplo, 
+ queremos hacer nuestras horas ahora, ¿verdad?
+
+0:11:43.308,0:11:54.457
+Entonces hacemos clic aquí y hacemos rama condicional. 
+ Ya tenemos... oh ¿qué hice mal aquí?
+
+0:11:54.457,0:12:02.440
+Hice clic en "Cambiar"... ¡Necesito hacer clic en "Variable" aquí!
+ Entonces, hacemos clic en "Minutos" y ahora vamos a decir
+
+0:12:02.440,0:12:18.160
+lo mismo otra vez - *mayor o igual* y decimos “60”. Entonces, si “Minutos” son mayores o iguales a “60”, entonces > "Controlar Variables".
+
+0:12:18.160,0:12:28.307
+Lo que vamos a hacer aquí: agregaremos una variable más, que será "Horas".
+
+0:12:28.307,0:12:42.080
+A nuestras horas... le vamos a añadir “1”. Si “Minutos” son mayores o iguales a “60”, entonces tenemos una hora. Entonces,
+
+0:12:42.080,0:12:55.702
+a hacer aquí, nuevamente, vamos a restablecer nuestros minutos a cero. 
+ Hacemos clic en "Minutos" y ponemos "0". Hecho.
+
+0:12:55.702,0:13:04.920
+¿Ves lo fácil que es? Lo muestro intencionalmente de esta manera, para que entiendas cómo funciona. ¿Qué tal las horas?
+
+0:13:04.920,0:13:14.760
+Porque para las horas no son 60 obviamente. Queremos decir
+ algo como: si tenemos 24 horas,
+
+0:13:14.760,0:13:25.117
+tendremos un día, ¿verdad? Así que va a ser un poco diferente, 
+ pero ya sabes cómo hacer esto.
+
+0:13:25.117,0:13:34.640
+Sólo te lo voy a mostrar para que puedas repetirlo. Entonces segundos, 
+ minutos, horas. Vamos a agregar una
+
+0:13:34.640,0:13:48.000
+variable más. Lo llamaremos "Días". Vamos a decir que si tenemos 24 horas, 
+ le sumamos "1" a la variable "Días".
+
+0:13:48.000,0:14:01.200
+¿Sí? Ah, ¿qué he hecho mal aquí? [Risas] ¡No he incluido la 
+ Rama Condicional! Tonto de mí.
+
+0:14:01.200,0:14:18.800
+Variable > “Horas”. Bueno. Mayor o igual a “24”. Bueno. Y luego movemos este allí.
+
+0:14:18.800,0:14:36.080
+Ahora queremos poner las horas a cero. Vamos a hacer eso. “Horas” > Establecer en > “0”. ¿Bueno? Así que ahora tenemos segundos,
+
+0:14:36.080,0:14:46.720
+minutos... ¡horas! Rama Condicional. Vamos a decir "Variable". Vamos a decir "Días".
+
+0:14:46.720,0:14:59.040
+Entonces podemos ingresar 30 o 31. 30 días nos da un mes. 
+ Haré 30. Estamos diciendo si "Días"
+
+0:14:59.040,0:15:09.137
+¡Ah! Encontré otro error. Debería decir esto: mayores o iguales.
+  Espero que aprendas de mis errores.
+
+0:15:09.137,0:15:14.689
+¡Eso sería sorprendente! Para ser honesto, ¡no quiero que *tú* cometas esos errores!
+
+0:15:14.689,0:15:22.667
+O si lo haces, ¡no tengas miedo! Es normal. Como yo, por 
+ ejemplo, salgo del trabajo, estoy cansado y
+
+0:15:22.667,0:15:29.391
+sigo haciendo eso. Simplemente lo revisas y lo cambias sin,
+  ya sabes, sentirte culpable por ello.
+
+0:15:30.040,0:15:43.790
+Entonces vamos a decir: si "Días" es mayor o igual a "30", entonces... 
+ lo que queremos hacer es crear la variable "Meses".
+
+0:15:43.790,0:15:59.292
+Mientras seguimos aquí… voy a crear “Años”. Ah, ¿miedo? No, para nada. 
+ Bueno, entonces si los “Días” son mayores
+
+0:15:59.292,0:16:16.321
+o iguales a 30, obtenemos un “Mes”. Entonces “Mes” > 
+ > Agregar > “1”. Bueno, eso es todo.
+
+0:16:16.321,0:16:27.168
+Ahora queremos recordar: restablecer “Días”. Siempre haga eso, 
+ de lo contrario [las variables] seguirán contando. Por ejemplo,
+
+0:16:27.168,0:16:29.579
+¡Oh, te lo puedo mostrar!
+
+0:16:30.240,0:16:39.400
+Entonces, si no haces esto, ¿qué tendrás? Tendrás 31, 32, 33, 34 y luego seguirá
+
+0:16:39.400,0:16:50.520
+Entonces no queremos eso. Es por eso que vamos a limitarlo a números adecuados.
+
+0:16:50.520,0:17:03.035
+Nuevamente, Rama Condicional y luego diremos “Variable” > 
+  “Meses”. Entonces 12 meses más o iguales
+
+0:17:03.035,0:17:11.347
+Está bien. Otra rama condicional aquí. ¡Ya casi llegamos, muchachos! No voy a hacer más.
+
+0:17:11.347,0:17:29.200
+Así que haremos clic aquí: Variables de control > “Meses” > Agregar > “1”. 
+ Bueno. Aplicar. Ahora “Días”. Voy a establecer cero en
+
+0:17:29.200,0:17:43.283
+"Días". Bueno. Bueno. Aplicar. ¡Eso es todo! Mira este. ¡Ese es nuestro código! 
+ Entonces, recapitulemos lo que hemos hecho hasta ahora.
+
+0:17:43.283,0:17:52.720
+Entonces, si vas a la lista de variables verás que hemos creado
+ las siguientes variables: “Segundos”, “Minutos”,
+
+0:17:52.720,0:18:06.240
+"Horas", "Días", "Meses" y "Años". Y lo creas o no, ¡con eso, 
+ nuestra configuración básica está completa!
+
+0:18:06.240,0:18:15.123
+Nuestro tiempo está cambiando, pero todavía no podremos 
+ ver cómo afecta a nuestro mundo de juego.
+
+0:18:15.123,0:18:23.600
+¡Es por eso que necesitamos agregar una visualización de la hora! Voy a 
+ mostrarles cómo agregar una visualización de la hora en el próximo video.
+
+0:18:23.600,0:18:31.960
+Realmente espero que les guste, así que en el próximo video
+ aprenderemos cómo crear una
+
+0:18:31.960,0:18:40.289
+visualización dinámica del tiempo. ¡Así podrás ver que lo que
+ acabas de crear realmente funciona! Y créanme, chicos, así es.
+
+0:18:40.289,0:18:51.560
+¡Así que sí! Lo aprenderemos en el próximo video. 
+ ¡Hasta el próximo video! Te veo allí. ¡Adiós!
